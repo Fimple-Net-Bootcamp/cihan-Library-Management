@@ -69,6 +69,7 @@ class Program
         //simulation begins
         Console.WriteLine("Ready to begin!\n");
 
+        //THE MENU
         while (true)
         {
             Console.WriteLine(
