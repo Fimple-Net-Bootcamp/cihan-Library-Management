@@ -42,5 +42,9 @@ namespace Library_Management
             }
             
         }
+        public void TakeBook(Book book)
+        {
+            Books.Add(book);
+        }
     }
 }

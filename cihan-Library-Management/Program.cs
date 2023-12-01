@@ -135,11 +135,51 @@ class Program
             }
             else if (command?.ToLower() == "rent book")
             {
-                Console.WriteLine("to be implemented\n");
+                Console.WriteLine("Who are you?: ");
+                string memberName = Console.ReadLine();
+                Member m = library.FindMemberByName(memberName);
+
+                if (m == null)
+                {
+                    Console.WriteLine("No such member.\n");
+                    continue;      
+                }
+
+                Console.WriteLine("Which book do you want?: ");
+                string bookName = Console.ReadLine();
+                Book b = library.FindBookByTitle(bookName);
+
+                if(b == null)
+                {
+                    Console.WriteLine("No such book.\n");
+                    continue;
+                }
+
+                library.LendBook(b, m);
             }
             else if (command?.ToLower() == "return book")
             {
-                Console.WriteLine("to be implemented\n");
+                Console.WriteLine("Who are you?: ");
+                string memberName = Console.ReadLine();
+                Member m = library.FindMemberByName(memberName);
+
+                if (m == null)
+                {
+                    Console.WriteLine("No such member.\n");
+                    continue;
+                }
+
+                Console.WriteLine("Which book do you want to return?: ");
+                string bookName = Console.ReadLine();
+                Book b = library.FindBookByTitle(bookName);
+
+                if (b == null)
+                {
+                    Console.WriteLine("No such book.\n");
+                    continue;
+                }
+
+                library.ReturnBook(b, m);
             }
             else if (command?.ToLower() == "print members")
             {
@@ -151,7 +191,7 @@ class Program
             }
             else if (command?.ToLower() == "silmarillion")
             {
-                Console.WriteLine("to be implemented\n");
+                library.PrintMembersAndTheirBooks();
             }
             else if (command?.ToLower() == "exit")
             {

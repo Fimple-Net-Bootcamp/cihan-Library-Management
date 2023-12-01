@@ -9,8 +9,8 @@ namespace Library_Management
     internal abstract class Text
     {
         //common properties
-        protected string? Title { get; set; }
-        protected string? Author { get; set; }
+        public string? Title { get; set; }
+        public string? Author { get; set; }
         protected int? PublishYear { get; set; }
     }
 }
